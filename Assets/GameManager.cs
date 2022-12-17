@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -16,5 +17,14 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+    }
+
+    public static void KillPlayer()
+    {
+        GameObject DeathSound = GameObject.FindGameObjectWithTag("DeathSound");
+        AudioSource sfx = DeathSound.GetComponent<AudioSource>();
+        sfx.Play();
+        DontDestroyOnLoad(DeathSound);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

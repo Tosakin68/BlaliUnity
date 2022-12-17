@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6432581615539927405}
   - component: {fileID: 9145219236953689713}
   m_Layer: 0
-  m_Name: Ceramic
+  m_Name: '[g]Ceramic'
   m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
