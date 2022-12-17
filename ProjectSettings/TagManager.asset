@@ -8,6 +8,7 @@ TagManager:
   - Bullet
   - DeathSound
   - Enemy
+  - DestroyBullet
   layers:
   - Default
   - TransparentFX

@@ -8,6 +8,7 @@ public class InstantDeathEnemy : MonoBehaviour
     Vector2 move;
     public float movespeed;
     public float movelength;
+    public bool FlipX;
     bool Moving = false;
     AudioSource sfx;
     PolygonCollider2D polygonCollider2D;
@@ -48,12 +49,18 @@ public class InstantDeathEnemy : MonoBehaviour
         if(Moving == false)
         {
             transform.Translate(-move * movespeed * Time.deltaTime);
-            spriteRenderer.flipX = false;
+            if(FlipX)
+            {
+                spriteRenderer.flipX = false;
+            }
         }
         if (Moving == true)
         {
             transform.Translate(move * movespeed * Time.deltaTime);
-            spriteRenderer.flipX = true;
+            if (FlipX)
+            {
+                spriteRenderer.flipX = true;
+            }
         }
     }
 

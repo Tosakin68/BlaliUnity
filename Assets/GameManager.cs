@@ -27,4 +27,19 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(DeathSound);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
+    public static void InstantKillEnemy(GameObject enemy, GameObject bullet)
+    {
+        if(bullet != null)
+        {
+            Destroy(bullet);
+        }
+        SpriteRenderer _spriteRenderer = enemy.GetComponent<SpriteRenderer>();
+        Collider2D _collider = enemy.GetComponent<Collider2D>();
+        AudioSource _sfx = enemy.GetComponent<AudioSource>();
+        _spriteRenderer.enabled = false;
+        _collider.enabled = false;
+        _sfx.Play();
+        Destroy(enemy, _sfx.clip.length);
+    }
 }
