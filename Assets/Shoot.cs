@@ -5,6 +5,7 @@ using UnityEngine;
 public class Shoot : MonoBehaviour
 {
     public GameObject Bullet;
+    public AudioClip shootsound;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +24,11 @@ public class Shoot : MonoBehaviour
         {
             Instantiate(Bullet, transform.position, transform.rotation);
             GameManager.bullets--;
+            AudioSource sfx = gameObject.AddComponent<AudioSource>();
+            sfx.clip = shootsound;
+            sfx.volume = 0.3f;
+            sfx.Play();
+            Destroy(sfx, sfx.clip.length);
         }
     }
 }

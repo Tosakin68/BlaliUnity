@@ -46,7 +46,6 @@ public class BulletWay : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("collision");
         if (collision.gameObject.CompareTag("DestroyBullet"))
         {
             Destroy(gameObject);
