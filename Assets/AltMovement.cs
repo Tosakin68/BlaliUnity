@@ -41,7 +41,7 @@ public class AltMovement : MonoBehaviour
     {
         var horizontalInput = Input.GetAxisRaw("Horizontal");
         _playerRigidbody.velocity = new Vector2(horizontalInput * playerSpeed, _playerRigidbody.velocity.y);
-        if(horizontalInput != 0 && !Input.GetButton("Vertical"))
+        if (horizontalInput != 0 && !Input.GetButton("Vertical"))
         {
             _animator.SetInteger("state", 0);
         }
@@ -49,7 +49,7 @@ public class AltMovement : MonoBehaviour
 
     private void Jump()
     {
-        if(Input.GetButtonDown("Jump") && isGrounded == true)
+        if (Input.GetButtonDown("Jump") && isGrounded == true)
         {
             _animator.SetInteger("state", 1);
             _playerRigidbody.AddForce(jump * jumpPower);
@@ -63,7 +63,7 @@ public class AltMovement : MonoBehaviour
         Rigidbody2D rgb = GetComponent<Rigidbody2D>();
         if (Input.GetAxis("Vertical") < 0 && Input.GetButton("Vertical"))
         {
-            if(!sfx.isPlaying)
+            if (!sfx.isPlaying)
             {
                 sfx.Play();
                 Destroy(colliderroot);
@@ -77,7 +77,7 @@ public class AltMovement : MonoBehaviour
         }
         else
         {
-            if(playerSpeed != playerSpeedbackup)
+            if (playerSpeed != playerSpeedbackup)
             {
                 _animator.SetInteger("state", 0);
                 sfx.Stop();
@@ -93,7 +93,7 @@ public class AltMovement : MonoBehaviour
 
     private void Flipper()
     {
-        if(Input.GetAxis("Horizontal") > 0)
+        if (Input.GetAxis("Horizontal") > 0)
         {
             _sr.flipX = false;
         }

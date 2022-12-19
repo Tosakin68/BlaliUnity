@@ -8,6 +8,7 @@ public class JumpOnHeadEnemy : MonoBehaviour
     Vector2 move;
     public float movespeed;
     public float movelength;
+    public Sprite SmashedSprite;
     public bool FlipX;
     bool Moving = false;
     AudioSource sfx;
@@ -72,10 +73,7 @@ public class JumpOnHeadEnemy : MonoBehaviour
             {
                 if (contact.point.y > transform.position.y + 0.5)
                 {
-                    Vector3 newscale = new Vector3(transform.localScale.x, 0.014214f, transform.localScale.z);
-                    Vector3 newpos = new Vector3(transform.position.x, transform.position.y - 0.16f, transform.position.z);
-                    gameObject.transform.localScale = newscale;
-                    transform.position = newpos;
+                    spriteRenderer.sprite = SmashedSprite;
                     Destroy(polygonCollider2D);
                     sfx.Play();
                     Destroy(gameObject, sfx.clip.length);

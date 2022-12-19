@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1716805529716463412}
   - component: {fileID: 6281730721206425702}
   - component: {fileID: 1835380103920989398}
-  - component: {fileID: 8699086662995156587}
+  - component: {fileID: -2588268690277402990}
   m_Layer: 0
   m_Name: FartBlali
   m_TagString: Player
@@ -240,6 +240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bullet: {fileID: 392314063878378127, guid: bef046a6e25d04f44a2d5a81f368e726, type: 3}
+  shootsound: {fileID: 0}
 --- !u!114 &1835380103920989398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257,7 +258,7 @@ MonoBehaviour:
   jump: {x: 0, y: 0}
   isGrounded: 0
   FartCollider: {fileID: 0}
---- !u!60 &8699086662995156587
+--- !u!60 &-2588268690277402990
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
