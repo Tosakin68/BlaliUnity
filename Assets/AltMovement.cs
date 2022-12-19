@@ -105,7 +105,7 @@ public class AltMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.name.StartsWith("[g]"))
+        if (collision.gameObject.name.EndsWith("Ground"))
         {
             isGrounded = true;
         }
@@ -113,7 +113,7 @@ public class AltMovement : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.name.StartsWith("[g]"))
+        if (collision.gameObject.name.EndsWith("Ground"))
         {
             isGrounded = false;
         }
@@ -121,7 +121,7 @@ public class AltMovement : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.gameObject.name.StartsWith("[g]"))
+        if (collision.gameObject.name.EndsWith("Ground"))
         {
             isGrounded = true;
         }
