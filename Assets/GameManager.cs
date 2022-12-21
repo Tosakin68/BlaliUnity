@@ -42,4 +42,9 @@ public class GameManager : MonoBehaviour
         _sfx.Play();
         Destroy(enemy, _sfx.clip.length);
     }
+
+    public static void NextScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
 }
