@@ -9,6 +9,7 @@ TagManager:
   - DeathSound
   - Enemy
   - DestroyBullet
+  - EvilBullet
   layers:
   - Default
   - TransparentFX
