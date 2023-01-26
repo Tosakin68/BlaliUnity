@@ -27,8 +27,17 @@ public class MusicPlayer : MonoBehaviour
         
     }
 
-    public void NewAudioClip(AudioClip audioClip)
+    public static void NewAudioClip(AudioClip audioClip, float volume)
     {
-        audioSource.clip = audioClip;
+        AudioSource sfx = GameObject.FindGameObjectWithTag("AudioPlayer").GetComponent<AudioSource>();
+        if(sfx.clip != audioClip)
+        {
+            sfx.clip = audioClip;
+            if (volume < 1)
+            {
+                sfx.volume = volume;
+            }
+            sfx.Play();
+        }
     }
 }
